@@ -1,2 +1,2 @@
 # iothermostat
-Indepentent Open-source Thermostat
+Independent Open-source Thermostat
