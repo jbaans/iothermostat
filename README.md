@@ -169,7 +169,7 @@ Check logs:
 <pre>sudo journalctl -r -b</pre>
 
 
-If everything runs without errors, the webinterface should be able to connect with the python backend via mosquitto.
+If everything runs without errors, the webinterface should be able to connect with the python backend via mosquitto. Make sure you password protected the webinterface with for example lighttpd's "mod_auth" + "mod_authn_file".
 
 
 ## Configuring iothermostat as a service
