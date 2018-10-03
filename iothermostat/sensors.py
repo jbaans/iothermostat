@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+""" sensors.py: Provides the Sensors class which handles getting data from 
+                the implemented sensors for the IOThermostat package """
+
+import bme280
+
+__author__ = "Jan Bonne Aans"
+__copyright__ = "Copyright 2018, Jan Bonne Aans"
+__credits__ = []
+__license__ = "GPLv3"
+__version__ = "1"
+__maintainer__ = "Jan Bonne Aans"
+__email__ = "jbaans-at-gmail.com"
+__status__ = "Development"
+
+class Sensors:
+
+    T_OFFSET = 0
+    H_OFFSET = 0
+    P_OFFSET = 0
+    sensor = None
+    
+
+    def __init__(self,t_offset,p_offset,h_offset):
+    
+        print("IOThermostat: Starting Sensors module..")
+        self.T_OFFSET = t_offset
+        self.P_OFFSET = p_offset
+        self.H_OFFSET = h_offset
+
+        self.sensor = bme280.Bme280()
+        self.sensor.set_mode(bme280.MODE_NORMAL)
+        
+        print("IOThermostat: Sensors module active.")
+
+
+    def getData(self):
+        # return sensor data, rounded to sensible numbers
+        # Note: use str().rstrip('0').rstrip('.') to remove trailing 0 with print
+        # t temperature in Celcius
+        # p pressure in hPa
+        # h humidity in %
+        t, p, h = self.sensor.get_data()
+        t = round(t+self.T_OFFSET,1)      # deg C
+        p = round(p/100+self.P_OFFSET,0)  # hPa
+        h = round(h+self.H_OFFSET,0)      # %
+        return (t,p,h)
+
+    # call this function when closing
+    def close(self):
+        print('IOThermostat: WARNING: Stopping Sensors is not implemented.')
