@@ -1,6 +1,10 @@
 ## iothermostat - Independent Open-source Thermostat
 
 
+Built for the HestiaPi Touch system, see: https://hestiapi.com/
+
+
+
  INSTALLATION INSTRUCTIONS
 
 (Sorry, these instructions are a mess still. To be updated soon!)
