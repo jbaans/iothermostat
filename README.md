@@ -1,54 +1,60 @@
 # iothermostat
 Independent Open-source Thermostat
+ INSTALLATION INSTRUCTIONS for IOTHERMOSTAT
 
-### INSTALLATION INSTRUCTIONS for IOTHERMOSTAT
-###
-### These are for a non-https webinterface
-### Note: Https requires much more configuration (instructions to be added).
-###
-### Don't use this on public accessible systems.
-### Restrict access to the webinterface using (digest) web server authentication.
-###
-### Requirements: mosquitto, python3, a web server (like lighttpd), sqlite
+ These are for a non-https webinterface
+ Note: Https requires much more configuration (instructions to be added).
 
-### install these packages with your package manager:
-git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite
+ Don't use this on public accessible systems.
+ Restrict access to the webinterface using (digest) web server authentication.
 
-### install these packages with python/pip:
-python -m pip install paho-mqtt apscheduler sqlalchemy
+ Requirements: mosquitto, python3, a web server (like lighttpd), sqlite
 
+ install these packages with your package manager:
+<pre>git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite</pre>
 
-### copy iothermostat/* to /home/YOURUSERNAME/iothermostat/
-### copy webinterface/* to /srv/http/iothermostat/
+ install these packages with python/pip:
+<pre>python -m pip install paho-mqtt apscheduler sqlalchemy</pre>
 
 
-###
-### mosquitto installation:
-###
-# install mosquitto MQTT with websockets
+ copy iothermostat/* to /home/YOURUSERNAME/iothermostat/
+ copy webinterface/* to /srv/http/iothermostat/
+
+
+
+ mosquitto installation:
+
+ install mosquitto MQTT with websockets
+<pre>
 cd /home/YOURNAME/builds 
 git clone https://github.com/eclipse/mosquitto.git
 cd mosquitto
-# select 2018 feb 23 version:
+</pre>
+select 2018 feb 23 version:
+<pre>
 git checkout 4f838e5
-nano config.mk -->
-#
+</pre>
+
+edit config.mk to contain:
+<pre>
 WITH_WEBSOCKETS:=yes
 WITH_DOCS:=no
-#
-make binary
-make install
+</pre>
 
-###
-### edit /etc/mosquitto/mosquitto.conf to contain:
-###
+<pre>make binary</pre>
+<pre>make install</pre>
 
-include_dir /etc/mosquitto/conf.d
 
-###
-### edit/create /etc/mosquitto/aclfile to contain:
-###
-# iothermostat backend user access:
+ edit /etc/mosquitto/mosquitto.conf to contain:
+
+
+<pre>include_dir /etc/mosquitto/conf.d</pre>
+
+
+ edit/create /etc/mosquitto/aclfile to contain:
+
+<pre>
+#iothermostat backend user access:
 user pyiothermostat
 topic write iothermostat0/sensor/#
 topic write iothermostat0/state/#
@@ -59,30 +65,31 @@ user jsiothermostat
 topic read iothermostat0/sensor/#
 topic read iothermostat0/state/#
 topic readwrite iothermostat0/settings/#
+</pre>
 
-###
-### generate/append /etc/mosquitto/credentials:
-###
-# generate a strong password (not required for login):
-echo $(pwgen -1)$(pwgen -1)
-# copy paste password after running:
-# (only use switch -c if /etc/mosquitto/credentials does not exist):
-sudo mosquitto_passwd -c /etc/mosquitto/credentials pyiothermostat
-# edit and copy paste the pyiothermostat password to replace PASSWORD in:
-/home/YOURUSERNAME/iothermostat/mqttconf.py
 
-# generate a strong password (not required for login):
-echo $(pwgen -1)$(pwgen -1)
-sudo mosquitto_passwd /etc/mosquitto/credentials jsiothermostat
-# edit and copy paste the jsiothermostat password to replace PASSWORD in:
-/srv/http/iothermostat/store.php
+ generate/append /etc/mosquitto/credentials:
+generate a strong password (not required for login):
+<pre>echo $(pwgen -1)$(pwgen -1)</pre>
+ copy paste password after running:
+ (only use switch -c if /etc/mosquitto/credentials does not exist):
+<pre>sudo mosquitto_passwd -c /etc/mosquitto/credentials pyiothermostat</pre>
+ edit and copy paste the pyiothermostat password to replace PASSWORD in:
+<pre>/home/YOURUSERNAME/iothermostat/mqttconf.py</pre>
 
-# adjust rights:
-sudo chmod 700 /etc/mosquitto/credentials
+ generate a strong password (not required for login):
+<pre>echo $(pwgen -1)$(pwgen -1)</pre>
+<pre>sudo mosquitto_passwd /etc/mosquitto/credentials jsiothermostat</pre>
+ edit and copy paste the jsiothermostat password to replace PASSWORD in:
+<pre>/srv/http/iothermostat/store.php</pre>
 
-###
-### create /etc/mosquitto/conf.d/iothermostat.conf:
-###
+ adjust rights:
+<pre>sudo chmod 700 /etc/mosquitto/credentials</pre>
+
+
+ create /etc/mosquitto/conf.d/iothermostat.conf:
+
+<pre>
 user mosquitto
 pid_file /var/run/mosquitto.pid
 
@@ -121,38 +128,37 @@ log_type warning
 log_type websockets
 log_type notice
 log_type information
+</pre>
 
 
-###
-### configure iothermostat datalog:
-###
-#in /home/YOURUSERNAME/iothermostat/iothermostat.py edit:
-DATALOGFILE = '/home/YOURUSERNAME/iothermostat.csv'
+ configure iothermostat datalog, in /home/YOURUSERNAME/iothermostat/iothermostat.py edit:
+<pre>DATALOGFILE = '/home/YOURUSERNAME/iothermostat.csv'</pre>
 
 
-###
-### (re)start mosquitto:
-###
-sudo systemctl restart mosquitto
+
+ (re)start mosquitto:
+
+<pre>sudo systemctl restart mosquitto</pre>
 
 
-###
-### test iothermostat backend
-###
-cd /home/YOURUSERNAME/iothermostat
-sudo python iothermostat.py
+
+ test iothermostat backend
+
+<pre>cd /home/YOURUSERNAME/iothermostat</pre>
+<pre>sudo python iothermostat.py</pre>
 
 
-###
-### check logs:
-###
-sudo journalctl -r -b
+
+ check logs:
+
+<pre>sudo journalctl -r -b</pre>
 
 
-###
-### start iothermostat with  a systemd unit file:
-###
-### create /etc/systemd/system/iothermostat.service containing:
+
+ start iothermostat with  a systemd unit file:
+
+ create /etc/systemd/system/iothermostat.service containing:
+<pre>
 [Unit]
 Description=IOThermostat Backend Service
 After=multi-user.target mosquitto.target
@@ -163,11 +169,14 @@ ExecStart=/usr/bin/python -u /home/YOURUSERNAME/iothermostat/iothermostat.py
 
 [Install]
 WantedBy=multi-user.target
+</pre>
 
-### reload units:
-sudo systemctl daemon-reload
-sudo systemctl start iothermostat.service
+ reload units:
+<pre>sudo systemctl daemon-reload</pre>
+<pre>sudo systemctl start iothermostat.service</pre>
 
-### run iothermostat at boot
-sudo systemctl enable iothermostat.service
+ run iothermostat at boot
+<pre>sudo systemctl enable iothermostat.service</pre>
+
+
 
