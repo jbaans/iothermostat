@@ -11,7 +11,7 @@ Built for the HestiaPi Touch system, see: https://hestiapi.com/
 
  These are for a non-https webinterface
  
- Note: Https requires much more configuration (instructions to be added).
+ Note: A secure / https configuration requires much more config files (instructions to be added).
 
 
  Don't use this on public accessible systems.
