@@ -3,9 +3,17 @@
 
 Built for the HestiaPi Touch system, see: https://hestiapi.com/
 
+## Features:
 
+Displays current temperature, humidity and pressure.
 
- INSTALLATION INSTRUCTIONS
+Allows changing set temperature.
+
+Allows setting modes: Auto/On/Off/Boost/Sleep
+
+Allows scheduling, browse to scheduler.php.
+
+# INSTALLATION INSTRUCTIONS
 
 (Sorry, these instructions are a mess still. To be updated soon!)
 
