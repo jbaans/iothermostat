@@ -1,9 +1,9 @@
-# iothermostat
-Independent Open-source Thermostat
+## iothermostat - Independent Open-source Thermostat
 
 
- INSTALLATION INSTRUCTIONS for IOTHERMOSTAT
+ INSTALLATION INSTRUCTIONS
 
+(Sorry, these instructions are a mess still. To be updated soon!)
 
  These are for a non-https webinterface
  
@@ -26,11 +26,12 @@ Independent Open-source Thermostat
 
 
  copy iothermostat/* to /home/YOURUSERNAME/iothermostat/
+ 
  copy webinterface/* to /srv/http/iothermostat/
 
 
 
- mosquitto installation:
+ ## mosquitto installation:
 
  install mosquitto MQTT with websockets
 <pre>
@@ -49,6 +50,7 @@ WITH_WEBSOCKETS:=yes
 WITH_DOCS:=no
 </pre>
 
+build mosquitto:
 <pre>make binary</pre>
 <pre>make install</pre>
 
@@ -149,20 +151,24 @@ log_type information
 <pre>sudo systemctl restart mosquitto</pre>
 
 
+## Running iothermostat backend
 
- test iothermostat backend
+Test iothermostat:
 
 <pre>cd /home/YOURUSERNAME/iothermostat</pre>
 <pre>sudo python iothermostat.py</pre>
 
 
 
- check logs:
+Check logs:
 
 <pre>sudo journalctl -r -b</pre>
 
 
+If everything runs without errors, the webinterface should be able to connect with the python backend via mosquitto.
 
+
+## Configuring iothermostat as a service
  start iothermostat with  a systemd unit file:
 
  create /etc/systemd/system/iothermostat.service containing:
