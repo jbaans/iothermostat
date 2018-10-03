@@ -16,10 +16,10 @@ Built for the HestiaPi Touch system, see: https://hestiapi.com/
 
  Don't use this on public accessible systems.
  
- Restrict access to the webinterface using (digest) web server authentication.
+ ### Security of this setup relies on restricting access to the webinterface using (digest) web server authentication!
  
 
- Requirements: mosquitto, python3, a web server (like lighttpd), sqlite
+ Requirements: mosquitto, python3, a web server (like lighttpd), sqlite; knowledge on how to host a php site and restricting access to it.
  
 
  install these packages with your package manager:
