@@ -1,14 +1,22 @@
 # iothermostat
 Independent Open-source Thermostat
+
+
  INSTALLATION INSTRUCTIONS for IOTHERMOSTAT
 
+
  These are for a non-https webinterface
+ 
  Note: Https requires much more configuration (instructions to be added).
 
+
  Don't use this on public accessible systems.
+ 
  Restrict access to the webinterface using (digest) web server authentication.
+ 
 
  Requirements: mosquitto, python3, a web server (like lighttpd), sqlite
+ 
 
  install these packages with your package manager:
 <pre>git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite</pre>
