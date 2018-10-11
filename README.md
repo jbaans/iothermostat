@@ -17,6 +17,8 @@ Allows scheduling, browse to scheduler.php.
 
 (Sorry, these instructions are a mess still. To be updated soon!)
 
+For installation of the Arch ARM system, see file Raspberry Pi Zero Arch Wifi.odt.
+
  These are for a non-https webinterface
  
  Note: A secure / https setup requires much more configuration (instructions to be added).
