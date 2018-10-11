@@ -32,6 +32,7 @@ else
     nmcli con down id IOTHERMOSTAT
     sleep 5
     nmcli device wifi connect "$SSID" password "$PASSPHRASE"
+    # instead of previous line, use the following to configure a static ip (useful for servers)
     #nmcli device wifi connect "$SSID" password "$PASSPHRASE" ip4 145.101.42.22
     sleep 10
     nmcli con mod "$SSID" connection.autoconnect yes
