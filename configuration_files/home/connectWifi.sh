@@ -11,7 +11,7 @@ if [ "$SSID" == "" ]; then
     exit 2
 fi
  
-IFS= read -s  -p Passphrase: PASSPHRASE
+IFS= read -p Passphrase: PASSPHRASE
 echo ""
 
 ### make sure that the script is called with `nohup nice ...`
