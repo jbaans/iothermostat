@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#exec xinput_calibrator; exit 1
+(/usr/bin/midori -e Fullscreen -a "http://localhost/iothermostat/index.php"; wait; pkill blackbox_) &
+
+exec /usr/bin/blackbox
