@@ -3,4 +3,4 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/certbot certonly --quiet --agree-tos --webroot -w /srv/http/ -d YOURDOMAIN --deploy-hook "/etc/letsencrypt/renewal-hooks/deploy/deploylighttpd.sh"
+ExecStart=/usr/bin/certbot certonly --quiet --agree-tos --webroot -w /srv/http/ --email YOUREMAIL -d YOURDOMAIN --deploy-hook "/etc/letsenc$
