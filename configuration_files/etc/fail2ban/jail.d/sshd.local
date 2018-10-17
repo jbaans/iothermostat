@@ -1,0 +1,10 @@
+[sshd]
+enabled = true
+port     = 2212
+filter   = sshd
+backend  = systemd
+maxretry = 5
+findtime = 20m
+ignoreip = 192.168.0.1/16
+
+

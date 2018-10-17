@@ -1,0 +1,4 @@
+[DEFAULT]
+bantime = 10m
+banaction = nftables-multiport
+chain = input

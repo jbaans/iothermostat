@@ -1,0 +1,8 @@
+sudo mkdir /etc/X11/xorg.conf.d
+sudo cp ./waveshare35a-overlay.dtb /boot/overlays/
+sudo cp -rf ./etc/X11/xorg.conf.d/99-calibration.conf-4  /etc/X11/xorg.conf.d/99-calibration.conf
+sudo cp -rf ./usr/share/X11/xorg.conf.d/99-fbturbo.conf  /usr/share/X11/xorg.conf.d/
+sudo cp ./cmdline.txt /boot/
+sudo cp ./inittab /etc/
+sudo cp ./boot/config-4.txt /boot/config.txt
+sudo reboot
