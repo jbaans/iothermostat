@@ -17,14 +17,16 @@ Allows scheduling, browse to scheduler.php.
 
 (Sorry, these instructions are a mess still. To be updated soon!)
 
-For installation of the Arch ARM system, see file Raspberry Pi Zero Arch Wifi.odt.
+For installation of the Arch ARM system, see:
+
+https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-on-Raspberry-Pi-Zero
 
  These are for a non-https webinterface
  
- Note: A secure / https setup requires much more configuration (instructions to be added).
+ Note: A secure / https setup requires some more configuration (instructions to be added).
 
 
- Don't use this on public accessible systems.
+ Don't use non-secure/https on public accessible systems.
  
  ### Security of this setup relies on restricting access to the webinterface using (digest) web server authentication!
  
