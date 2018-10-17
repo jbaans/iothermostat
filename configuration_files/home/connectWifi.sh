@@ -5,20 +5,22 @@ if [ $EUID -ne 0 ]; then
 fi
 
 SSID=$1
+PASSPHRASE=$2
 
 if [ "$SSID" == "" ]; then
     echo "You must pass an SSID. Aborting."
     exit 2
 fi
  
-IFS= read -p Passphrase: PASSPHRASE
-echo ""
-
 ### make sure that the script is called with `nohup nice ...`
 if [ "$3" != "calling_myself" ]
 then
     # this script has *not* been called recursively by itself
     nohup_out="$0".log
+
+    IFS= read -p Passphrase: PASSPHRASE
+    echo ""
+
     echo "Forking to background..."
     nohup nice "$0" "$SSID" "$PASSPHRASE" "calling_myself" >> $nohup_out &
     sleep 1
@@ -36,4 +38,3 @@ else
     nmcli con mod "$SSID" connection.autoconnect-priority 10
     nmcli -f NAME,UUID,AUTOCONNECT,AUTOCONNECT-PRIORITY,DEVICE c s
 fi
-
