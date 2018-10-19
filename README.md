@@ -36,9 +36,19 @@ Features:
     Midori
     Wifi hotspot when no Wifi network available
     
-    
+1. Download, verify MD5 sum, unzip and write image to microsd card.
+2. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
+3. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
+4. ssh to 10.42.0.1 on port 2222 with user iothermostat, password iothermostat2018.
+5. Replace connectWifi.sh with that from https://github.com/jbaans/iothermostat/blob/master/configuration_files/home/connectWifi.sh (this fixes two passphrase bugs). Configure your wifi network (drops connection):
+
+`sudo ./connectWifi.sh YOURSSID`
+
+6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to iothermostat@x.x.x.x on port: 2222, user: iothermostat, password: iothermostat2018.
+
 Follow the instructions on:
-https://community.hestiapi.com/t/iothermostat-image/806
+
+https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
 ## Complete manual installation:
