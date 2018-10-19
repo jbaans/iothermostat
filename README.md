@@ -19,7 +19,9 @@ Security is based on restricting access to the webinterface using (digest) web s
 
 You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions.
 
-## Download the pre-configured Arch ARM v6 image here:
+## Using the pre-configured Arch image:
+
+Get disk2-archarmv6-iothermostat-181016.img.zip from this link:
 
 https://drive.google.com/file/d/1FxYcYQ5RrKbFVnKMtyjQSLOg3z8utUXH/view?usp=sharing
 
@@ -27,7 +29,7 @@ MD5 (disk2-archarmv6-iothermostat-181016.img.zip) = e8c209d1e5275c36f82b6012f401
 
 Features:
 
-    Arch ARM v6 Linux
+    Arch Linux ARM v6
     IOThermostat https://github.com/jbaans/iothermostat
     Python
     Lighttpd
@@ -36,7 +38,7 @@ Features:
     Midori
     Wifi hotspot when no Wifi network available
     
-1. Download, verify MD5 sum, unzip and write image to microsd card.
+1. Download, verify MD5 sum, unzip and write image to microsd card
 2. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
 3. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
 4. ssh to 10.42.0.1 on port 2222 with user iothermostat, password iothermostat2018.
@@ -51,7 +53,7 @@ Features:
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
-## Complete manual installation:
+## Manually:
 
 1. Follow these instruction to set up the OS:
 
