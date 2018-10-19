@@ -59,8 +59,8 @@ https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-Raspberry-Pi-Zero,B
 
-2. Install these packages:
-<pre>sudo pacman -Syu git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite libwebsockets fail2ban midori blackbox</pre>
+2. Install these packages (Note: I need to update this list):
+<pre>sudo pacman -Syu git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite libwebsockets fail2ban midori blackbox ddclient certbot nftables</pre>
 
 3. Install these packages with python/pip:
 <pre>python -m pip install paho-mqtt apscheduler sqlalchemy</pre>
@@ -77,8 +77,10 @@ download configuration_files to /home/iothermostat/
 
 Copy (with backup enabled) config files and scripts to their locations:
 
-<pre> ./deployetc.sh </pre>
+<pre> sudo ./deployetc.sh </pre>
 <pre> ./deployhome.sh </pre>
+
+<pre> sudo cp LCD-show/waveshare35a-overlay.dtb /boot </pre>
 
 
 5. Mosquitto installation:
