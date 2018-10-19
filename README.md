@@ -46,14 +46,14 @@ Features:
 
 <pre> sudo ./connectWifi.sh YOURSSID </pre>
 
-6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to iothermostat@x.x.x.x on port: 2222, user: iothermostat, password: iothermostat2018.
+6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 2222 with user iothermostat, password iothermostat2018.
 
 7. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
-## Manually:
+## Completely Manual:
 
 1. Follow these instruction to set up the OS:
 
