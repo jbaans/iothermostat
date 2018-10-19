@@ -17,7 +17,7 @@ Security is based on restricting access to the webinterface using (digest) web s
 
 # INSTALLATION INSTRUCTIONS
 
-(Sorry, these instructions are a mess still. To be updated soon!)
+You can download a pre-configured image or you can do everything yourself, see below.The pre-configured image is built  according to the complete manual installation instructions.
 
 ## Download the pre-configured Arch ARM v6 image here:
 
@@ -42,32 +42,34 @@ Features:
 4. ssh to 10.42.0.1 on port 2222 with user iothermostat, password iothermostat2018.
 5. Replace connectWifi.sh with that from https://github.com/jbaans/iothermostat/blob/master/configuration_files/home/connectWifi.sh (this fixes two passphrase bugs). Configure your wifi network (drops connection):
 
-`sudo ./connectWifi.sh YOURSSID`
+<pre> sudo ./connectWifi.sh YOURSSID </pre>
 
 6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to iothermostat@x.x.x.x on port: 2222, user: iothermostat, password: iothermostat2018.
 
-Follow the instructions on:
+7. Follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
 ## Complete manual installation:
 
-Follow these instruction to set up the OS:
+1. Follow these instruction to set up the OS:
 
 https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-Raspberry-Pi-Zero,B
 
-Then install these packages:
+2. Install these packages:
 <pre>sudo pacman -Syu git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite libwebsockets fail2ban midori blackbox</pre>
 
- install these packages with python/pip:
+3. Install these packages with python/pip:
 <pre>python -m pip install paho-mqtt apscheduler sqlalchemy</pre>
 
- download and copy iothermostat/* to /home/iothermostat/iothermostat/
+4. Copy configuration files in:
+
+download and copy iothermostat/* to /home/iothermostat/iothermostat/
  
- download and copy webinterface/* to /srv/http/iothermostat/
+download and copy webinterface/* to /srv/http/iothermostat/
  
- download configuration_files to /home/iothermostat/
+download configuration_files to /home/iothermostat/
 
 <pre> cd /home/iothermostat/configuration_files </pre>
 
@@ -77,7 +79,7 @@ Copy (with backup enabled) config files and scripts to their locations:
 <pre> ./deployhome.sh </pre>
 
 
- ## mosquitto installation:
+5. Mosquitto installation:
 
  install mosquitto MQTT with websockets
 <pre>
@@ -100,8 +102,8 @@ build mosquitto:
 <pre>make binary</pre>
 <pre>make install</pre>
 
-# iothermostat installation:
-See https://community.hestiapi.com/t/iothermostat-image/806
-Follow from step 7 (set passwords).
+6. Install iothermostat:
+
+See https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
