@@ -45,7 +45,7 @@ https://community.hestiapi.com/t/iothermostat-image/806
 
 Follow these instruction to set up the OS:
 
-https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-on-Raspberry-Pi-Zero
+https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-Raspberry-Pi-Zero,B
 
 Then install these packages:
 <pre>sudo pacman -Syu git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite libwebsockets fail2ban midori blackbox</pre>
