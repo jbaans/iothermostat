@@ -17,7 +17,7 @@ Security is based on restricting access to the webinterface using (digest) web s
 
 # INSTALLATION INSTRUCTIONS
 
-You can download a pre-configured image or you can do everything yourself, see below.The pre-configured image is built  according to the complete manual installation instructions.
+You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions.
 
 ## Download the pre-configured Arch ARM v6 image here:
 
@@ -46,7 +46,7 @@ Features:
 
 6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to iothermostat@x.x.x.x on port: 2222, user: iothermostat, password: iothermostat2018.
 
-7. Follow the instructions on:
+7. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
@@ -102,8 +102,8 @@ build mosquitto:
 <pre>make binary</pre>
 <pre>make install</pre>
 
-6. Install iothermostat:
+6. Finally follow the instructions on:
 
-See https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
+https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
