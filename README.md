@@ -13,33 +13,45 @@ Allows setting modes: Auto/On/Off/Boost/Sleep
 
 Allows scheduling, browse to scheduler.php.
 
+Security is based on restricting access to the webinterface using (digest) web server authentication.
+
 # INSTALLATION INSTRUCTIONS
 
 (Sorry, these instructions are a mess still. To be updated soon!)
 
-For installation of the Arch ARM system, see:
+## Download the pre-configured Arch ARM v6 image here:
+
+https://drive.google.com/file/d/1FxYcYQ5RrKbFVnKMtyjQSLOg3z8utUXH/view?usp=sharing
+
+MD5 (disk2-archarmv6-iothermostat-181016.img.zip) = e8c209d1e5275c36f82b6012f401aae7
+
+Features:
+
+    Arch ARM v6 Linux
+    IOThermostat https://github.com/jbaans/iothermostat
+    Python
+    Lighttpd
+    Mosquitto
+    Blackbox
+    Midori
+    Wifi hotspot when no Wifi network available
+    
+    
+Follow the instructions on:
+https://community.hestiapi.com/t/iothermostat-image/806
+
+
+## Complete manual installation:
+
+Follow these instruction to set up the OS:
 
 https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-on-Raspberry-Pi-Zero
 
- These are for a non-https webinterface
- 
- Note: A secure / https setup requires some more configuration (instructions to be added).
-
-
- Don't use non-secure/https on public accessible systems.
- 
- ### Security of this setup relies on restricting access to the webinterface using (digest) web server authentication!
- 
-
- Requirements: mosquitto, python3, a web server (like lighttpd), sqlite; knowledge on how to host a php site and restricting access to it.
- 
-
- install these packages with your package manager:
-<pre>git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite</pre>
+Then install these packages:
+<pre>sudo pacman -Syu git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite libwebsockets fail2ban midori blackbox</pre>
 
  install these packages with python/pip:
 <pre>python -m pip install paho-mqtt apscheduler sqlalchemy</pre>
-
 
  download and copy iothermostat/* to /home/iothermostat/iothermostat/
  
@@ -49,7 +61,7 @@ https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-on-Raspberry-
 
 <pre> cd /home/iothermostat/configuration_files </pre>
 
-on a fresh install run (these will copy (with backup enabled) config files and scripts to their locations:
+Copy (with backup enabled) config files and scripts to their locations:
 
 <pre> ./deployetc.sh </pre>
 <pre> ./deployhome.sh </pre>
@@ -80,6 +92,6 @@ build mosquitto:
 
 # iothermostat installation:
 See https://community.hestiapi.com/t/iothermostat-image/806
-Follow from step 3.
+Follow from step 7 (set passwords).
 
 
