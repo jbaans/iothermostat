@@ -41,7 +41,7 @@
                 <span class="left"><img id="flame" src="img/flame_lightblue.png" width="25" height="25" alt=""/></span>
             </div>
             <div class="divTableCell"></div>
-            <div class="divTableCell">
+            <div class="divTableCell" id="buttoncell">
                 <span onclick="refresh(); return false;" id="button-menu" class="right-aligned button">
                     <img src="img/home_lightblue.png" style="height:27px; width:27px;"/>
                 </span>
@@ -63,4 +63,24 @@
     </div>   
 </div>
 </body>
+<script>
+$(document).ready(function(){
+    // show scheduler button if client is not on touch screen device itself
+    if (!(location.hostname === "localhost" || location.hostname === "127.0.0.1")){
+        div = document.getElementById("buttoncell");
+
+        var myimg = document.createElement('img');
+        myimg.src = "img/schedule_lightblue.png";
+        myimg.style= "height:27px; width:27px;";
+
+        var myspan = document.createElement('span');
+        myspan.addEventListener("click", function(){location.href="scheduler.php"; return false;});
+        myspan.id="button-schedule";
+        myspan.className="right-aligned button";
+
+        myspan.appendChild(myimg);
+        div.appendChild(myspan);
+    }
+});
+</script>
 </html>
