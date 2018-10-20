@@ -57,7 +57,7 @@ The image includes:
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 
-## Completely Manual:
+## Completely manually:
 
 Note: This is a rather lengthy process.
 
