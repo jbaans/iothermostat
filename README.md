@@ -1,19 +1,23 @@
-## iothermostat - Independent Open-source Thermostat
+## IOThermostat - Independent Open-source Thermostat
 
 
-Built for the HestiaPi Touch system, see: https://hestiapi.com/
+Built for the HestiaPi Touch system with high security in mind, see: https://hestiapi.com/
 
 ## Features:
 
-Displays current temperature, humidity and pressure.
+Display current temperature, humidity and pressure.
 
-Allows changing set temperature.
+Set modes: Auto/On/Off/Boost (1h)/Sleep (24h)
 
-Allows setting modes: Auto/On/Off/Boost/Sleep
+Set temperature for each mode.
 
-Allows scheduling, browse to scheduler.php.
+Remote web interface with authentication.
 
-Security is based on restricting access to the webinterface using (digest) web server authentication.
+Scheduling for Auto mode: browse to iothermostat/scheduler.php.
+
+Full SSL encryption.
+
+Many security features.
 
 # INSTALLATION INSTRUCTIONS
 
@@ -55,37 +59,41 @@ https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
 ## Completely Manual:
 
+Note: This is a rather lengthy process.
+
 1. Follow these instruction to set up the OS:
 
 https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-Raspberry-Pi-Zero,B
 
 2. Install these packages (Note: I need to update this list):
-<pre>sudo pacman -Syu git python python-pip lighttpd fcgi wget pwgen php php-cgi php-sqlite sqlite libwebsockets fail2ban midori blackbox ddclient certbot nftables</pre>
+<pre>sudo pacman -Syu python python-pip lighttpd fcgi php php-cgi midori xorg-server xorg-xinit xf86-video-fbdev xterm ttf-dejavu xf86-video-fbturbo xorg-xauth blackbox ddclient php-sqlite libwebsockets xinput_calibrator nftables fail2ban</pre>
 
-3. Install these packages with python/pip:
+3. Reconfigure libraries (for libwebsockets):
+<pre>sudo ldconfig</pre>
+
+4. Install these packages with python/pip:
 <pre>python -m pip install paho-mqtt apscheduler sqlalchemy</pre>
 
-4. Copy configuration files in:
+5. Copy configuration files in:
 
-download and copy iothermostat/* to /home/iothermostat/iothermostat/
+download/copy iothermostat/* to /home/iothermostat/iothermostat/
  
-download and copy webinterface/* to /srv/http/iothermostat/
+download/copy webinterface/* to /srv/http/iothermostat/
  
-download configuration_files to /home/iothermostat/
+download/copy configuration_files to /home/iothermostat/
 
 <pre> cd /home/iothermostat/configuration_files </pre>
 
 Copy (with backup enabled) config files and scripts to their locations:
 
-<pre> sudo ./deployetc.sh </pre>
-<pre> ./deployhome.sh </pre>
+<pre> chmod +x *.sh
+sudo ./deployetc.sh
+./deployhome.sh </pre>
 
 <pre> sudo cp LCD-show/waveshare35a-overlay.dtb /boot </pre>
 
 
-5. Mosquitto installation:
-
- install mosquitto MQTT with websockets
+6. Install mosquitto MQTT with websockets:
 <pre>
 cd /home/iothermostat/builds 
 git clone https://github.com/eclipse/mosquitto.git
@@ -103,10 +111,22 @@ WITH_DOCS:=no
 </pre>
 
 build mosquitto:
-<pre>make binary</pre>
-<pre>make install</pre>
+<pre>make binary
+sudo make install
+sudo useradd -r -s /bin/false mosquitto
+sudo mkdir /var/lib/mosquitto
+chown mosquitto:mosquitto /var/lib/mosquitto</pre>
 
-6. Finally follow the instructions on:
+6. Setup BM280 T/H/P sensor:
+
+<pre>
+cd /home/iothermostat/builds 
+git clone https://github.com/cmur2/python-bme280.git
+cd python-bme280/
+sudo python setup.py install
+</pre>
+
+7. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
