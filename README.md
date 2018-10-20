@@ -76,11 +76,11 @@ https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-
 
 5. Copy configuration files in:
 
-download/copy iothermostat/* to /home/iothermostat/iothermostat/
+download and copy iothermostat/* to /home/iothermostat/iothermostat/
  
-download/copy webinterface/* to /srv/http/iothermostat/
+download and copy webinterface/* to /srv/http/iothermostat/
  
-download/copy configuration_files to /home/iothermostat/
+download and copy configuration_files to /home/iothermostat/
 
 <pre> cd /home/iothermostat/configuration_files </pre>
 
