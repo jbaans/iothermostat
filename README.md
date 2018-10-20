@@ -19,6 +19,21 @@ Full SSL encryption.
 
 Many security features.
 
+# UPGRADING INSTRUCTIONS
+
+Except for mqttconf.py:
+
+download and copy iothermostat/* to /home/iothermostat/iothermostat/
+
+Except for store.php:
+
+download and copy webinterface/* to /srv/http/iothermostat/
+
+Note: If you did overwrite either or both mqttconf.py and store.php, you will have to run:
+<pre>
+sudo ./setMQTTpasswd.sh
+</pre>
+
 # INSTALLATION INSTRUCTIONS
 
 You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions.
