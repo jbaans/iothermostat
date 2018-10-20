@@ -43,7 +43,9 @@ class DataLogger:
     def write(self, datalog):
     
         file_exists = os.path.isfile(self.FILE)
-        file_size = os.path.getsize(self.FILE)
+        file_size = 0
+        if file_exists:
+            file_size = os.path.getsize(self.FILE)
 
         # limit file size. compress and restart
         if file_exists and file_size > self.MAXFILESIZE:
