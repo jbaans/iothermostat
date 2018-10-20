@@ -1,0 +1,10 @@
+# See /boot/overlays/README for all available options
+
+gpu_mem=16
+initramfs initramfs-linux.img followkernel
+#lcd_rotate=2
+dtparam=i2c0=on
+dtparam=i2c_arm=on
+dtoverlay=waveshare35a
+framebuffer_width = 480
+framebuffer_height = 320
