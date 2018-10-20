@@ -86,9 +86,12 @@ download/copy configuration_files to /home/iothermostat/
 
 Copy (with backup enabled) config files and scripts to their locations:
 
-<pre> chmod +x *.sh
+<pre>
+chmod +x *.sh
 sudo ./deployetc.sh
-./deployhome.sh </pre>
+./deployhome.sh 
+sudo systemctl daemon-reload
+</pre>
 
 <pre> sudo cp LCD-show/waveshare35a-overlay.dtb /boot </pre>
 
@@ -110,7 +113,7 @@ WITH_WEBSOCKETS:=yes
 WITH_DOCS:=no
 </pre>
 
-build mosquitto:
+build and install:
 <pre>make binary
 sudo make install
 sudo useradd -r -s /bin/false mosquitto
@@ -126,7 +129,67 @@ cd python-bme280/
 sudo python setup.py install
 </pre>
 
-7. Finally follow the instructions on:
+7. Setup Waveshare display:
+
+<pre>
+su
+cp --backup configuration_files/LCD-show/usr/share/X11/xorg.conf.d/99-fbturbo.conf /usr/share/X11/xorg.conf.d/
+chmod 644 /usr/share/X11/xorg.conf.d/99-fbturbo.conf
+</pre>
+
+8. Block caching in midori:
+<pre>
+mkdir -p /home/iothermostat/.cache/midori
+chmod -R -w /home/iothermostat/.cache/midori
+</pre>
+
+9. Start X remotely for calibration:
+<pre>
+cd /home/iothermostat
+xinit -- :1
+</pre>
+
+10. Copy-paste the output of the previous step to /etc/X11/xorg.conf.d/99-calibration.conf and to fix swapped x and y, add:
+<pre>
+Option "TransformationMatrix"  "0 -1 1 1 0 0 0 0 1”
+</pre>
+
+example Section:
+<pre>
+Section "InputClass"
+        Identifier      "calibration"
+        MatchProduct    "ADS7846 Touchscreen"
+        Option  "MinX"  "21856"
+        Option  "MaxX"  "22311"
+        Option  "MinY"  "49919"
+        Option  "MaxY"  "48690"
+        Option  "SwapXY"        "1" # unless it was already set to 1
+        Option  "InvertX"       "0"  # unless it was already set
+        Option  "InvertY"       "0"  # unless it was already set
+        Option "TransformationMatrix"  "0 -1 1 1 0 0 0 0 1"
+EndSection
+</pre>
+
+11.  Comment out xinput_calibrator line in .xinitrc to disable it:
+<pre>
+#exec xinput_calibrator
+</pre>
+
+12. Start the services required for IOThermostat:
+<pre>
+sudo systemctl daemon-reload
+sudo systemctl restart nftables.service fail2ban.service lighttpd.service fstrim.timer mosquitto.service getty@tty1.service iothermostat.service
+</pre>
+
+13.  Browse to http://x.x.x.x/iothermostat/ and login with user: iothermostat and your GUI password.
+
+14. If screen and web interface work, make permanent and test by rebooting:
+<pre>
+sudo systemctl enable nftables.service lighttpd.service fstrim.timer mosquitto.service getty@tty1.service iothermostat.service
+sudo reboot now
+</pre>
+
+15. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
