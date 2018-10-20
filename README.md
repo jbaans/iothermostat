@@ -178,7 +178,7 @@ EndSection
 12. Start the services required for IOThermostat:
 <pre>
 sudo systemctl daemon-reload
-sudo systemctl restart nftables.service fail2ban.service lighttpd.service fstrim.timer mosquitto.service getty@tty1.service iothermostat.service
+sudo systemctl restart nftables.service lighttpd.service fstrim.timer mosquitto.service getty@tty1.service iothermostat.service
 </pre>
 
 13.  Browse to http://x.x.x.x/iothermostat/ and login with user: iothermostat and your GUI password.
