@@ -82,9 +82,9 @@ https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-
 
 2. Follow these instruction to set up the packages IOThermostat depends on:
 
-https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-Raspberry-Pi-Zero,B
+https://github.com/jbaans/iothermostat/wiki/IOThermostat-dependencies-installation
 
-2. Follow these instruction to set up IOThermostat:
+3. Follow these instruction to set up IOThermostat:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
