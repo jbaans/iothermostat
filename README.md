@@ -5,7 +5,7 @@ Built for the HestiaPi Touch system with high security in mind, see: https://hes
 
 * Disk image and instructions for Raspberry Pi Zero or 1 + Waveshare LCD
 
-* Instruction for installing on a different device
+* Use Manual instructions for installing on a different device
 
 * For use on a non Raspberry Pi compatible device, simply use your own GPIO driver
 
