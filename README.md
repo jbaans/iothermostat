@@ -19,7 +19,7 @@ Set temperature for each mode.
 
 Remote web interface with authentication.
 
-Scheduling for Auto mode: browse to iothermostat/scheduler.php.
+Scheduling for Auto mode
 
 Full SSL encryption.
 
