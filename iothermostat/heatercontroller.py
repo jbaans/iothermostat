@@ -30,7 +30,7 @@ class HeaterController:
         print('IOThermostat: Starting Heater Controller..')
 
         self.gpio_state = GPIO.LOW
-        self.GPIO_PIN = 12 # this can be 23 as well
+        self.GPIO_PIN = 23 # hestiapi touch has heater on 23 and hot tap water on 12
         self.pid = None
 
         # PID feedback settings
