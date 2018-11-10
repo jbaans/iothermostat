@@ -3,7 +3,7 @@
 
 Built for the HestiaPi Touch system with high security in mind, see: https://hestiapi.com/
 
-* Disk image and instructions for Raspberry Pi Zero or 1 + Waveshare LCD
+* Disk image and instructions for Raspberry Pi Zero, Zero W or 1 A/B + Waveshare LCD
 
 * Use Manual instructions for installing on a different device
 
@@ -64,16 +64,17 @@ The image includes:
     Wifi hotspot when no Wifi network available
     
 1. Download, verify MD5 sum, unzip and write image to microsd card
-2. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
-3. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
-4. ssh to 10.42.0.1 on port 2222 with user iothermostat, password iothermostat2018.
-5. Replace connectWifi.sh with that from https://github.com/jbaans/iothermostat/blob/master/configuration_files/home/connectWifi.sh (this fixes two passphrase bugs). Configure your wifi network (drops connection):
+2. Apply the fix for networking from https://github.com/jbaans/iothermostat/issues/1#issuecomment-437595045
+3. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
+4. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
+5. ssh to 10.42.0.1 on port 2222 with user iothermostat, password iothermostat2018.
+6. Replace connectWifi.sh with that from https://github.com/jbaans/iothermostat/blob/master/configuration_files/home/connectWifi.sh (this fixes two passphrase bugs). Configure your wifi network (drops connection):
 
 <pre> sudo ./connectWifi.sh YOURSSID </pre>
 
-6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 2222 with user iothermostat, password iothermostat2018.
+7. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 2222 with user iothermostat, password iothermostat2018.
 
-7. Finally follow the instructions on:
+8. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
