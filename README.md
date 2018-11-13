@@ -70,7 +70,7 @@ The image includes:
 
 <pre> sudo ./connectWifi.sh YOURSSID </pre>
 
-7. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 2222 with user iothermostat, password iothermostat2018.
+7. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 22 with user iothermostat, password iothermostat2018.
 
 8. Finally follow the instructions on:
 
