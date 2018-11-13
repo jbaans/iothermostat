@@ -27,22 +27,18 @@ Many security features.
 
 # UPGRADING INSTRUCTIONS
 
-Except for mqttconf.py:
-
-download and copy iothermostat/* to /home/iothermostat/iothermostat/
-
-Except for store.php:
-
-download and copy webinterface/* to /srv/http/iothermostat/
-
-Note: If you did overwrite either or both mqttconf.py and store.php, you will have to run:
 <pre>
+cd /home/iothermostat/builds
+git clone https://github.com/jbaans/iothermostat.git
+cd iothermostat
+chmod +x deployIOThermostat.sh
+./deployIOThermostat.sh
 sudo ./setMQTTpasswd.sh
 </pre>
 
 # INSTALLATION INSTRUCTIONS
 
-You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions.
+You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions. Disk image is built for a 8GB SD card.
 
 ## Using the pre-configured Arch image:
 
