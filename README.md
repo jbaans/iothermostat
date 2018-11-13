@@ -21,7 +21,7 @@ Remote web interface with authentication.
 
 Scheduling for Auto mode
 
-Full SSL encryption.
+Full encryption of web traffic.
 
 Many security features.
 
