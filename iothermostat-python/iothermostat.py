@@ -32,7 +32,7 @@ class IOThermostat:
     H_OFFSET = 0
     P_OFFSET = 0
     SUBSCRIBELIST = [topics.MODE, topics.TARGETTEMPERATURE, topics.SCHEDULE]
-    DATALOGFILE = '/home/YOURUSERNAME/iothermostat.csv'
+    DATALOGFILE = '/home/iothermostat/iothermostat.csv'
     DATALOGMAXFILESIZE = 2*1000*1000 # 2MB in Bytes
     # topics to log, options are:
     # topics.TEMPERATURE,topics.PRESSURE,topics.HUMIDITY,topics.D_TEMPERATURE,topics.D_PRESSURE,topics.D_HUMIDITY,
