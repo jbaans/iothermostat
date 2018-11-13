@@ -44,7 +44,7 @@ You can download a pre-configured image or you can do everything yourself, see b
 
 Get disk2-archarmv6-iothermostat-181016.img.zip from this link:
 
-https://drive.google.com/file/d/1MUTBq-ApRAjq4yZMuw8PRNhCs1NK33wT/view?usp=sharing
+https://drive.google.com/uc?export=download&confirm=qS7D&id=1MUTBq-ApRAjq4yZMuw8PRNhCs1NK33wT
 
 MD5:
 
