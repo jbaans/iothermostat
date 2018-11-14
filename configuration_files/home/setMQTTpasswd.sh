@@ -21,3 +21,5 @@ echo json_encode(\$credentials);
 EOF
 
 echo "password = \"$pypasswd\"" >> /home/iothermostat/iothermostat-python/mqttconf.py
+
+systemctl restart lighttpd mosquitto iothermostat
