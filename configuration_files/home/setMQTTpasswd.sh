@@ -11,7 +11,7 @@ pwfile="/etc/mosquitto/credentials"
 touch $pwfile
 mosquitto_passwd -b $pwfile pyiothermostat $pypasswd 
 mosquitto_passwd -b $pwfile jsiothermostat $jspasswd
-sudo chmod 700 $pwfile
+chmod 700 $pwfile
 
 cat <<EOF > /srv/http/iothermostat/store.php
 <?php
