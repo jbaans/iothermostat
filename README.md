@@ -33,6 +33,7 @@ git clone https://github.com/jbaans/iothermostat.git
 cd iothermostat
 chmod +x deployIOThermostat.sh
 ./deployIOThermostat.sh
+cd /home/iothermostat
 sudo ./setMQTTpasswd.sh
 </pre>
 
