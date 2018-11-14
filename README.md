@@ -61,7 +61,21 @@ The image includes:
     Blackbox
     Midori
     Wifi hotspot when no Wifi network available
-    
+
+Changes:
+
+    Fixed Fallback Wifi
+    Added updating features
+    Fixed Python pytz installation
+    Fixed Scheduler Button
+    Fixed setMQTTpasswd script
+    Fixed certbot service
+    Fixed wifi driver blacklist
+    Fixed datalog location
+    Fixed screen calibration
+    Fixed Lighttpd credentials path
+    Fixed deployhome script
+
 1. Download, verify MD5 sum, unzip and write image to microsd card
 2. Apply the fix for networking from https://github.com/jbaans/iothermostat/issues/1#issuecomment-437595045
 3. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
