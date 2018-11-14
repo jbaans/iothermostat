@@ -43,13 +43,13 @@ You can download a pre-configured image or you can do everything yourself, see b
 
 ## Using the pre-configured Arch image:
 
-Get disk2-archarmv6-iothermostat-181016.img.zip from this link:
+Get archarmv6-iothermostat-18-11-14.img.zip from this link:
 
-https://drive.google.com/uc?export=download&confirm=qS7D&id=1MUTBq-ApRAjq4yZMuw8PRNhCs1NK33wT
+https://drive.google.com/open?id=1iExmBiI6qe_kAGd4YWvHeuNpWI3UtBVP
 
 MD5:
 
-https://drive.google.com/open?id=1ze3nF06GKL_0PASuIQtrw5HaaQ5KVyGj
+https://drive.google.com/open?id=10x5rpndLZjyVElBwawdyQ4kZWRSHnHNU
 
 The image includes:
 
