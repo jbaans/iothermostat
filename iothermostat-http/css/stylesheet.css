@@ -30,6 +30,14 @@ div.blueTable {
   padding: 5px;
 }
 
+#button-schedule{
+  top: 5px;
+  right: 5px;
+  height: 31px;
+  width:  40px;
+  padding: 5px;
+}
+
 .button-plusminus{
   height: 60px;
   width:  100px;
