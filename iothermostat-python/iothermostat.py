@@ -31,7 +31,8 @@ class IOThermostat:
     T_OFFSET = -0.5
     H_OFFSET = 0
     P_OFFSET = 0
-    SUBSCRIBELIST = [topics.MODE, topics.TARGETTEMPERATURE, topics.SCHEDULE]
+    SUBSCRIBELIST = [topics.MODE, topics.TARGETTEMPERATURE, topics.SCHEDULE, topics.OTHERTEMPERATURE]
+    USE_OTHERTEMPERATURE = False
     DATALOGFILE = '/home/iothermostat/iothermostat.csv'
     DATALOGMAXFILESIZE = 2*1000*1000 # 2MB in Bytes
     # topics to log, options are:
@@ -177,6 +178,10 @@ class IOThermostat:
             while True:
                t,p,h = sensors.getData()
 
+               # use temperature value from mqtt
+               if self.USE_OTHERTEMPERATURE and topics.OTHERTEMPERATURE in self.mqttclient.getData():
+                   t = float( messages[topics.OTHERTEMPERATURE] )
+            
                # calculate averages
                t_avg = (t_avg + t)/2       
                p_avg = (p_avg + p)/2       
