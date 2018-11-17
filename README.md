@@ -29,8 +29,12 @@ Many security features.
 
 <pre>
 cd /home/iothermostat/builds
+rm -rf iothermostat
 git clone https://github.com/jbaans/iothermostat.git
-cd iothermostat
+cd iothermostat/configuration_files
+chmod +x *.sh
+./deployhome.sh
+cd..
 chmod +x deployIOThermostat.sh
 ./deployIOThermostat.sh
 cd /home/iothermostat
