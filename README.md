@@ -82,15 +82,15 @@ Changes:
 
 1. Download, verify MD5 sum, unzip and write image to microsd card
 2. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
-4. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
-5. ssh to 10.42.0.1 with user iothermostat, password iothermostat2018.
-6. Configure your wifi network (drops connection):
+3. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
+4. ssh to 10.42.0.1 with user iothermostat, password iothermostat2018.
+5. Configure your wifi network (drops connection):
 
 <pre> sudo ./connectWifi.sh YOURSSID </pre>
 
-7. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 22 with user iothermostat, password iothermostat2018.
+6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 22 with user iothermostat, password iothermostat2018.
 
-8. Finally follow the instructions on:
+7. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
 
