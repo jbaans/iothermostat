@@ -10,6 +10,7 @@ SYSTEMNAME =        'iothermostat0'
 # topic definition
 # sensors (python user only writes)
 TEMPERATURE =       SYSTEMNAME+'/sensor/temperature'
+OTHERTEMPERATURE =  SYSTEMNAME+'/sensor/othertemperature' # temperature reading from mqtt
 HUMIDITY =          SYSTEMNAME+'/sensor/humidity'
 PRESSURE =          SYSTEMNAME+'/sensor/pressure'
 D_TEMPERATURE =     SYSTEMNAME+'/sensor/d_temperature'
