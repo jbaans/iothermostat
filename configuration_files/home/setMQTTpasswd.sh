@@ -22,4 +22,4 @@ EOF
 
 echo "password = \"$pypasswd\"" >> /home/iothermostat/iothermostat-python/mqttconf.py
 
-systemctl restart lighttpd mosquitto iothermostat
+systemctl restart lighttpd mosquitto iothermostat getty@tty1
