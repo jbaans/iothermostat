@@ -34,7 +34,7 @@ git clone https://github.com/jbaans/iothermostat.git
 cd iothermostat/configuration_files
 chmod +x *.sh
 ./deployhome.sh
-cd..
+cd ..
 chmod +x deployIOThermostat.sh
 ./deployIOThermostat.sh
 cd /home/iothermostat
