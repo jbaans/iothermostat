@@ -81,11 +81,10 @@ Changes:
     Fixed deployhome script
 
 1. Download, verify MD5 sum, unzip and write image to microsd card
-2. Apply the fix for networking from https://github.com/jbaans/iothermostat/issues/1#issuecomment-437595045
-3. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
+2. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
 4. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
 5. ssh to 10.42.0.1 with user iothermostat, password iothermostat2018.
-6. Replace connectWifi.sh with that from https://github.com/jbaans/iothermostat/blob/master/configuration_files/home/connectWifi.sh (this fixes two passphrase bugs). Configure your wifi network (drops connection):
+6. Configure your wifi network (drops connection):
 
 <pre> sudo ./connectWifi.sh YOURSSID </pre>
 
