@@ -177,9 +177,10 @@ class IOThermostat:
 
             while True:
                t,p,h = sensors.getData()
-
+               messages = self.mqttclient.getData()
+               
                # use temperature value from mqtt
-               if self.USE_OTHERTEMPERATURE and topics.OTHERTEMPERATURE in self.mqttclient.getData():
+               if self.USE_OTHERTEMPERATURE and topics.OTHERTEMPERATURE in messages:
                    t = float( messages[topics.OTHERTEMPERATURE] )
             
                # calculate averages
@@ -193,7 +194,7 @@ class IOThermostat:
                d_h = (h - h_avg)/self.REFRESH_SECONDS
 
                # process data from subscribed topics
-               self.processMessages( self.mqttclient.getData() )
+               self.processMessages( messages )
            
                # prepare for publishing
                messages = self.prepareMessages(t, p, h, d_t, d_p, d_h)
