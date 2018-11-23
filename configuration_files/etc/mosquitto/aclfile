@@ -1,6 +1,6 @@
 #python backend user access:
 user pyiothermostat
-topic write iothermostat0/sensor/#
+topic readwrite iothermostat0/sensor/#
 topic write iothermostat0/state/#
 topic readwrite iothermostat0/settings/#
 
