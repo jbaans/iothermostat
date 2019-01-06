@@ -15,6 +15,8 @@
 
 // global variables
 var MODES = ['Auto','Boost','On','Off', 'Sleep'];
+var MIN_TEMPERATURE = 5;
+var MAX_TEMPERATURE = 25;
 var windowunloaded = false;
 var t_average = 0;
 var p_average = 0;
@@ -217,16 +219,16 @@ function incrTemperature(negative){
     if ( elementId !== null ){
         // get current set temperature
         var t = parseFloat( elementId.innerHTML );
-    
-        // increase it by 0.5 or negative 0.5 if set
-        if (negative){
+
+        // increase it by 0.5 or negative 0.5 if set and within range
+        if ( negative && t > MIN_TEMPERATURE ){
             t -= 0.5;
+            setTemperature(t);
         } 
-        else {
+        else if ( !negative && t < MAX_TEMPERATURE ){
             t += 0.5;
+            setTemperature(t);
         }
-        // set and broadcast it 
-        setTemperature(t);
     }
 }
 
