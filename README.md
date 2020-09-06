@@ -1,5 +1,9 @@
 ## IOThermostat - Independent Open-source Thermostat
 
+## IMPORTANT: EXPERIMENTAL BRANCH
+## Not intended for regular use, only for experimental use and development
+## This branch may be non-functional!
+
 
 Built for the HestiaPi Touch system with high security in mind, see: https://hestiapi.com/
 
