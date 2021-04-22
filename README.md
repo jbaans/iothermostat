@@ -3,6 +3,10 @@
 
 Built for the HestiaPi Touch system with high security in mind, see: https://hestiapi.com/
 
+Intended users: developers
+
+Highlights:
+
 * Disk image and instructions for Raspberry Pi Zero, Zero W or 1 A/B + Waveshare LCD
 
 * Use Manual instructions for installing on a different device
@@ -64,7 +68,7 @@ The image includes:
     Mosquitto
     Blackbox
     Midori
-    Wifi hotspot when no Wifi network available
+    Script for Wifi hotspot when no Wifi network available or initial setup
 
 Changes:
 
