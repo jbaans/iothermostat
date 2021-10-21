@@ -51,7 +51,7 @@
         <div class="divTableRow">
             <table style="display:inline; white-space:nowrap">
                 <tr><td>IOThermostat v.:</td><td><span id="iothermversion">Waiting for update...</span></td></tr>
-                <tr><td>Operating system:</td><td><?php echo php_uname("s");?> <?php echo php_uname("r");?> <?php echo php_uname("m");?></td></tr>
+                <tr><td>Operating system:</td><td><?php echo php_uname("s");?> <?php echo php_uname("m");?><br><?php echo php_uname("r");?></td></tr>
                 <tr><td>System time:</td><td><?php echo date('d/m/Y');?> <label id="timer"></label> </td></tr>
                 <tr><td>Backend status:</td><td><span id="py_serverstatus">Waiting for update...</span></td></tr>
                 <tr><td>Backend uptime:</td><td><span id="uptime">Waiting for update...</span> <span>days</span></td></tr>
