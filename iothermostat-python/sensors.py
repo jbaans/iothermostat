@@ -54,7 +54,7 @@ class Sensors:
         h = data.humidity
 
         t = round(t+self.T_OFFSET,1)      # deg C
-        p = round(p/100+self.P_OFFSET,0)  # hPa
+        p = round(p+self.P_OFFSET,0)      # hPa
         h = round(h+self.H_OFFSET,0)      # %
 
         return (t,p,h)
