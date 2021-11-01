@@ -1,7 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-#exec xinput_calibrator; exit 1
+FILE=~/calibrated
 
-(/usr/bin/midori -e Fullscreen -a "http://localhost/iothermostat/index.php"; wait; pkill blackbox_) &
+/usr/bin/matchbox-window-manager &
 
-exec /usr/bin/blackbox
+if [ -f "$FILE" ]; then
+   luakit -u http://localhost/iothermostat/index.php
+else
+   xinput_calibrator
+   touch "$FILE"
+fi
