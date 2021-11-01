@@ -56,7 +56,7 @@
                 <tr><td>Backend status:</td><td><span id="py_serverstatus">Waiting for update...</span></td></tr>
                 <tr><td>Backend uptime:</td><td><span id="uptime">Waiting for update...</span> <span>days</span></td></tr>
                 <tr><td>System uptime:</td><td><span id="systemuptime">Waiting for update...</span> <span>days</span></td></tr>
-                <tr><td>Server IP:</td><td><?=gethostbyname(gethostname());?></td></tr>
+                <tr><td>Server IP:</td><td><?php include 'getip.php' ?></td></tr>
             </table>
         </div>
 
