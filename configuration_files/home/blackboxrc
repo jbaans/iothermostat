@@ -1,6 +1,0 @@
-session.screen0.enableToolbar:	False
-session.screen0.workspaces:	1
-session.styleFile:	/usr/share/blackbox/styles/Gray
-session.changeWorkspaceWithMouseWheel:	False
-session.doubleClickInterval:	1
-session.fullMaximization:	True
