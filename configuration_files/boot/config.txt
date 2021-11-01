@@ -1,10 +1,14 @@
 # See /boot/overlays/README for all available options
 
-gpu_mem=16
-initramfs initramfs-linux.img followkernel
-#lcd_rotate=2
-dtparam=i2c0=on
+dtparam=audio=off
+[pi4]
+max_framebuffers=2
+
+[all]
+#dtoverlay=vc4-fkms-v3d
+hdmi_force_hotplug=1
 dtparam=i2c_arm=on
-dtoverlay=waveshare35a
-framebuffer_width = 480
-framebuffer_height = 320
+dtparam=spi=on
+enable_uart=1
+dtoverlay=tft35a:rotate=90
+gpu_mem=256
