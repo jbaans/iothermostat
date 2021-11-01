@@ -4,6 +4,7 @@ After=multi-user.target mosquitto.target
 
 [Service]
 Type=idle
+ExecStartPre=/home/iothermostat/getIP.sh
 ExecStart=/usr/bin/python -u /home/iothermostat/iothermostat-python/iothermostat.py
 
 [Install]
