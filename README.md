@@ -1,7 +1,7 @@
 ## IOThermostat - Independent Open-source Thermostat
 
 
-Built for the HestiaPi Touch system with high security in mind, see: https://hestiapi.com/
+Built for the HestiaPi Touch with Raspberry Pi OS Lite system with high security in mind, see: https://hestiapi.com/
 
 Intended users: developers
 
@@ -49,7 +49,7 @@ sudo ./setMQTTpasswd.sh
 
 You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions. Disk image is built for a 8GB SD card.
 
-## Using the pre-configured Arch image:
+## Using the pre-configured Arch image (OBSOLETE):
 
 Get archarmv6-iothermostat-18-11-14.img.zip from this link:
 
