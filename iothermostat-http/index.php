@@ -28,7 +28,7 @@
         <div class="divTableRow">
             <div class="divTableCell centered"><span id="targettemperature">20.0</span> &deg;</div>
             <div class="divTableCell">
-                <img class="icon" src="img/home_lightblue.png" alt=""/>
+                <img class="icon" src="img/indoor_lightblue.png" alt=""/>
             </div>
             <div class="divTableCell">
                 <span id="temperature">20.0</span> &deg;
