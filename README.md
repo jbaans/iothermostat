@@ -34,6 +34,8 @@ The system security can be hardened according to the wiki. Full encryption of we
 
 # UPGRADING INSTRUCTIONS
 
+SSH into the system, run the following commands:
+
 <pre>
 sudo apt update; sudo apt upgrade
 cd /home/iothermostat/builds
@@ -48,7 +50,7 @@ chmod +x deployIOThermostat.sh
 cd /home/iothermostat
 sudo ./setMQTTpasswd.sh
 </pre>
-Note: If you have the RTL8188eu Wifi chip, the command <pre>sudo install-wifi</pre> has to be run after every kernel update to load the right driver! We should probably find am automatic solution for that.
+Note: If you have the RTL8188eu Wifi chip, the command <pre>sudo install-wifi</pre> has to be run after every kernel update to load the right driver! (We should probably find am automatic solution for that).
 
 # INSTALLATION INSTRUCTIONS
 
