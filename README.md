@@ -66,7 +66,16 @@ https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Arch-Linux-A
 >link tbd<
 
 1. Download, verify MD5 sum, unzip and write image to microsd card
-2. Configure your network in /boot/network.conf
+2. Configure your network in: `wpa_supplicant.conf` in the boot partition, it should contain:
+<pre>
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+country=GB
+update_config=1
+network={
+ssid="YOUR SSD"
+psk="your wifi password"
+key_mgmt=WPA-PSK
+}</pre>
 3. Insert the card into the RPi and power up. Display should show start log and finish into the IOThermostat GUI.
 4. Find the ip of the IOThermostat (see GUI->[i] button, or check your router or use `nmap -sP` and `arp` commands) and ssh into it on port 22 with user iothermostat, password iothermostat2021.
 5. Finally follow the instructions on:
