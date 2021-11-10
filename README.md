@@ -14,21 +14,23 @@ Highlights:
 
 * For use on a non Raspberry Pi compatible device, simply use your own GPIO driver
 
-## Features:
+## How to use:
 
-Display current temperature, humidity and pressure.
+The main screen shows current temperature, humidity and pressure. A flame icon is shown when the heater is on. The number above the + and - buttons is the set temperature for the selected mode. The set temperature is adjusted by the + and - buttons.
 
-Set modes: Auto/On/Off/Boost (1h)/Sleep (24h)
+Possible modes are: 
+- Auto (runs the scheduled program)
+- On (keeps the room at the set temperature)
+- Off (keeps heater off)
+- Boost (keeps room at set temperature for one hour)
+- Sleep (keeps the heater off for 24 hours)
 
-Set temperature for each mode.
+The information screen shows information about the system.
 
-Remote web interface with authentication.
+The GUI is also available through the web interface, which uses username/password authentication. In the web interface, heater scheduling for Auto mode can be programmed. Click [i] button and then the configuration button.
 
-Scheduling for Auto mode
+The system security can be hardened according to the wiki. Full encryption of web traffic is then set, the network configuration is more strict and firewalling and blocking unwanted access is enabled.
 
-Full encryption of web traffic.
-
-Many security features.
 
 # UPGRADING INSTRUCTIONS
 
