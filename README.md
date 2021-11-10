@@ -86,5 +86,5 @@ key_mgmt=WPA-PSK
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-configuration
 
-Note: this image is based on Raspbery Pi OS Lite. It runs and X server with Matchbox, loads the GUI in luakit, runs a Mosquitto mqtt server and a Lighttpd webserver. The IOThermostat backend runs in Python3.
+Note: this image is based on Raspbery Pi OS Lite. It is built according to the recipe https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Raspberry-Pi-OS-Lite . It runs an X server with Matchbox, loads the GUI in luakit, runs a Mosquitto mqtt server and a Lighttpd webserver. The IOThermostat backend runs in Python3.
 
