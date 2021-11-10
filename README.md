@@ -1,5 +1,6 @@
 ## IOThermostat - Independent Open-source Thermostat
 
+!!! currently changing to Raspberry Pi OS Lite, instructions may be incomplete !!!
 
 Built for the HestiaPi Touch with Raspberry Pi OS Lite system with high security in mind, see: https://hestiapi.com/
 
