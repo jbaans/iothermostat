@@ -65,7 +65,7 @@ https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Raspberry-Pi
 
 https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Arch-Linux-ARM
 
-## Image with Raspberry Pi OS Lite and IOThermostat preinstalled:
+## Installing using a prebuilt image:
 
 >link tbd<
 
@@ -86,4 +86,5 @@ key_mgmt=WPA-PSK
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-configuration
 
+Note: this image is based on Raspbery Pi OS Lite. It runs and X server with Matchbox, loads the GUI in luakit, runs a Mosquitto mqtt server and a Lighttpd webserver. The IOThermostat backend runs in Python3.
 
