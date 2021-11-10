@@ -33,6 +33,7 @@ Many security features.
 # UPGRADING INSTRUCTIONS
 
 <pre>
+sudo apt update; sudo apt upgrade
 cd /home/iothermostat/builds
 rm -rf iothermostat
 git clone https://github.com/jbaans/iothermostat.git
@@ -51,60 +52,25 @@ Note: If you have the RTL8188eu Wifi chip, the command <pre>sudo install-wifi</p
 
 You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions. Disk image is built for a 8GB SD card.
 
-## Manual installation on top of Raspberry Pi OS Lite:
+## Recipe for installing Raspberry Pi OS Lite and IOThermostat:
 
 https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Raspberry-Pi-OS-Lite
 
-## Completely manually for Arch Arm:
 
-Note: This is a rather lengthy process.
+## Recipe for installing Arch Linux ARM and IOThermostat:
 
-1. Follow these instruction to set up the OS:
+https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Arch-Linux-ARM
 
-https://github.com/jbaans/iothermostat/wiki/Install-Arch-Linux-ARM-with-Wifi-on-Raspberry-Pi-Zero,B
+## Image with Raspberry Pi OS Lite and IOThermostat preinstalled:
 
-2. Follow these instruction to set up the packages IOThermostat depends on:
-
-https://github.com/jbaans/iothermostat/wiki/IOThermostat-dependencies-installation
-
-3. Follow these instruction to set up IOThermostat:
-
-https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
-
-
-## Using the pre-configured Arch image (OBSOLETE):
-
-Get archarmv6-iothermostat-18-11-14.img.zip from this link:
-
-https://drive.google.com/open?id=1iExmBiI6qe_kAGd4YWvHeuNpWI3UtBVP
-
-MD5:
-
-https://drive.google.com/open?id=10x5rpndLZjyVElBwawdyQ4kZWRSHnHNU
-
-The image includes:
-
-    Arch Linux ARM v6
-    IOThermostat https://github.com/jbaans/iothermostat
-    Python
-    Lighttpd
-    Mosquitto
-    Blackbox
-    Midori
-    Script for Wifi hotspot when no Wifi network available or initial setup
+>link tbd<
 
 1. Download, verify MD5 sum, unzip and write image to microsd card
-2. Insert the card and power up. Display should show start log and finish into the IOThermostat GUI.
-3. Connect your PC to hotspot IOTHERMOSTAT with password iothermostat0.
-4. ssh to 10.42.0.1 with user iothermostat, password iothermostat2018.
-5. Configure your wifi network (drops connection):
+2. Configure your network in /boot/network.conf
+3. Insert the card into the RPi and power up. Display should show start log and finish into the IOThermostat GUI.
+4. Find the ip of the IOThermostat (see GUI->[i] button, or check your router or use `nmap -sP` and `arp` commands) and ssh into it on port 22 with user iothermostat, password iothermostat2021.
+5. Finally follow the instructions on:
 
-<pre> sudo ./connectWifi.sh YOURSSID </pre>
-
-6. Connect your PC to YOURSSID, find the ip of iothermostat (see display-advanced/router/network) and ssh to x.x.x.x on port 22 with user iothermostat, password iothermostat2018.
-
-7. Finally follow the instructions on:
-
-https://github.com/jbaans/iothermostat/wiki/IOThermostat-installation
+https://github.com/jbaans/iothermostat/wiki/IOThermostat-configuration
 
 
