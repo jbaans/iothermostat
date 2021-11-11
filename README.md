@@ -67,9 +67,9 @@ https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Arch-Linux-A
 
 ## Installing using a prebuilt image:
 
-file 1.1GB: [Raspberry Pi OS Lite + IOThermostat 211110 image](https://drive.google.com/file/d/18wNCz3U5hl2NcvVRJty0KT5m0DXHLMZk/view?usp=sharing)
+file: [Raspberry Pi OS Lite + IOThermostat 211110 image](https://drive.google.com/file/d/18wNCz3U5hl2NcvVRJty0KT5m0DXHLMZk/view?usp=sharing) (1.1GB)
 
-file 0.1 kB: [SHA256 sum](https://drive.google.com/file/d/1lVLDBiYD2TE9bcp0ao7F1X1dke9Qbqt0/view?usp=sharing)
+file: [SHA256 sum](https://drive.google.com/file/d/1lVLDBiYD2TE9bcp0ao7F1X1dke9Qbqt0/view?usp=sharing) (0.1 kB)
 
 1. Download, verify SHA256 sum, unzip and write image to a microSD card >= 4 GB
 
