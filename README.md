@@ -54,7 +54,7 @@ Note: If you have the RTL8188eu Wifi chip, the command <pre>sudo install-wifi</p
 
 # INSTALLATION INSTRUCTIONS
 
-You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions. Disk image is built for a 8GB SD card.
+You can download a pre-configured image or you can do everything yourself, see below. The pre-configured image is built  according to the complete manual installation instructions.
 
 ## Recipe for installing Raspberry Pi OS Lite and IOThermostat:
 
@@ -69,7 +69,7 @@ https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Arch-Linux-A
 
 >link tbd<
 
-1. Download, verify SHA256 sum, unzip and write image to microsd card
+1. Download, verify SHA256 sum, unzip and write image to a microSD card >= 4 GB
 
 2. Configure your network in: `wpa_supplicant.conf` in the boot partition, it should contain:
 
