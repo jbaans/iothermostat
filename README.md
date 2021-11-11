@@ -1,8 +1,6 @@
 ## IOThermostat - Independent Open-source Thermostat
 
-!!! currently changing to Raspberry Pi OS Lite, instructions may be incomplete !!!
-
-Built for the HestiaPi Touch with Raspberry Pi OS Lite system with high security in mind, see: https://hestiapi.com/
+Built for the HestiaPi Touch with Raspberry Pi OS Lite, see: https://hestiapi.com/
 
 Intended users: developers
 
@@ -10,9 +8,11 @@ Highlights:
 
 * Disk image and instructions for Raspberry Pi Zero, Zero W or 1 A/B + Waveshare LCD
 
-* Use Manual instructions for installing on a different device
+* Complete manual installation instructions available
 
 * For use on a non Raspberry Pi compatible device, simply use your own GPIO driver
+
+* Speed and security
 
 ## How to use:
 
