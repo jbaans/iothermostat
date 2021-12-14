@@ -12,6 +12,7 @@ touch $pwfile
 mosquitto_passwd -b $pwfile pyiothermostat $pypasswd 
 mosquitto_passwd -b $pwfile jsiothermostat $jspasswd
 chmod 700 $pwfile
+sudo chown mosquitto $pwfile
 
 cat <<EOF > /srv/http/iothermostat/store.php
 <?php
