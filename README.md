@@ -73,7 +73,7 @@ file: [SHA256 sum](https://drive.google.com/file/d/1EQ4Z4KUDI7oIOrqZHKeobqhc7s50
 
 1. Download both files
 
-2. Verify SHA256 sum ( <pre>sha256sum -c rpioslite-iothermostat-211216.img.gz.sha256sum</pre> )
+2. Verify SHA256 sum <pre>sha256sum -c rpioslite-iothermostat-211216.img.gz.sha256sum</pre>
 
 3. Write image to a microSD card >= 4 GB with Raspberry Pi Imager or <pre>sudo gunzip -c rpioslite-iothermostat-211216.img.gz | sudo dd iflag=fullblock oflag=direct conv=fsync status=progress bs=4M of=/dev/sdX</pre> where sdX is your microSD card.
 
