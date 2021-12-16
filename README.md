@@ -67,13 +67,17 @@ https://github.com/jbaans/iothermostat/wiki/Install-IOThermostat-on-Arch-Linux-A
 
 ## Installing using a prebuilt image:
 
-file: [Raspberry Pi OS Lite + IOThermostat 211110 image]() -- sorry: broken file! please be patient while I fix it. (1.1GB)
+file: [Raspberry Pi OS Lite + IOThermostat 211110 image](https://drive.google.com/file/d/1WP6vVLdWi4tQ19mdr5PPpEfxfckhLEsv) (1.2 GB)
 
-file: [SHA256 sum](https://drive.google.com/file/d/1SjWYgESdYoZPu7hiEM8DYvCzV-Y7D_f_) (0.1 kB)
+file: [SHA256 sum](https://drive.google.com/file/d/1EQ4Z4KUDI7oIOrqZHKeobqhc7s50WVQt/view?usp=sharing) (0.1 kB)
 
-1. Download, verify SHA256 sum, unzip and write image to a microSD card >= 4 GB
+1. Download both files
 
-2. Configure your network in: `wpa_supplicant.conf` in the boot partition, it should contain:
+2. Verify SHA256 sum ( <pre>sha256sum -c rpioslite-iothermostat-211216.img.gz.sha256sum</pre> )
+
+3. Write image to a microSD card >= 4 GB with Raspberry Pi Imager or <pre>sudo gunzip -c rpioslite-iothermostat-211216.img.gz | sudo dd iflag=fullblock oflag=direct conv=fsync status=progress bs=4M of=/dev/sdX</pre> where sdX is your microSD card.
+
+4. Make new file `wpa_supplicant.conf` in the boot partition, it should contain:
 
 <pre>
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
