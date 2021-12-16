@@ -92,9 +92,7 @@ Adjust the country code if needed.
 
 4. Find the ip of the IOThermostat (see GUI->[i] button, or check your router or use `nmap -sP` and `arp` commands) and ssh into it on port 22 with user iothermostat, password iothermostat2021.
 
-5. Run sudo `raspi-config` and select Advanced - Expand filesystem
-
-6. Finally follow the instructions on:
+5. Finally follow the instructions on:
 
 https://github.com/jbaans/iothermostat/wiki/IOThermostat-configuration
 
